@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.fb {
+    display: flex;
+}
+.fg1 {
+    flex-grow: 1;
+}
+.fg0 {
+    flex-grow: 0;
+}
+
+header, footer, .main {
+    border:1px solid red;
+    flex-grow: 0;
+    min-height: 60px;
+}
+
+.main {
+    flex: 1;
+}
