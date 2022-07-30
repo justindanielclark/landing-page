@@ -1,29 +1,200 @@
+:root {
+    --bg-color1: #1F2937;
+    --bg-color2: #E5E7EB;
+    --bg-color3: #3882F6;
+    --bg-color4: #5e6875;
+    --bg-color5: rgb(224, 157, 33);
+    --text-color1: #F9FAF8;
+    --text-color2: #E5E7EB; 
+}
+/* Generics */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Times New Roman', sans-serif;
 }
 body {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
-.fb {
+.container {
+    max-width: 80em;
+    min-width: 40em;
+    margin: 0 auto;
+    height: 100%;
+}
+header, footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 5em;
+    width: 100%;
+}
+
+/* HEADER */
+header {
+    background: var(--bg-color1);
+}
+header>.container {
     display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--bg-color5);;
 }
-.fg1 {
-    flex-grow: 1;
+.header-logo {
+    color: var(--text-color1);
+    font-size: 2rem;
+    align-self: center;
 }
-.fg0 {
-    flex-grow: 0;
+.header-links {
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+    list-style: none;
+}
+.header-links>a {
+    text-decoration: none;
+    color: var(--text-color1);
+    font-size: 1.15rem;
+    padding: 0 20px;
+}
+.header-links>a {
+    display: flex;
+    align-items: center;
+    box-sizing: auto;
+}
+.header-links>a.focused {
+    border-top: .3em solid var(--bg-color5);;
+    border-bottom: .3em solid var(--bg-color5);;
+}
+.header-links>a:hover:not(a.focused){
+    padding-top: .3em;
+    border-bottom: .3em solid var(--bg-color5);;
 }
 
-header, footer, .main {
-    border:1px solid red;
+/* HERO */
+.hero {
+    background-color: var(--bg-color1);
+}
+.hero>.container {
+    padding-top: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.hero>.container>.text-container{
     flex-grow: 0;
-    min-height: 60px;
+    flex-shrink: 1;
+    flex-basis: 60%;
+    background-color: var(--bg-color1);
+    border: 2px solid var(--bg-color4);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.hero>.container>.text-container>h1 {
+    font-size: 2.5em;
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: var(--text-color1);
+}
+.hero>.container>.text-container>p {
+    font-size: 1.2rem;
+    color: var(--text-color1);
+    padding-bottom: 20px;
+    width: 90%;
+}
+.hero>.container>.text-container>button {
+    color: var(--text-color1);
+    background-color: var(--bg-color3);
+    font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 10px 15px;
+    border: none;
+}
+.hero>.container>.image-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 40%;
+}
+.hero>.container>.image-container>img {
+    width: 100%
 }
 
-.main {
-    flex: 1;
+/* CONTENT */
+
+.content>.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 3em 0;
+}
+.content>.container>h1 {
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: .5em;
+    text-decoration: underline;
+}
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2em
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 25%;
+    border: .25em solid var(--bg-color5);
+    border-radius: 1em;
+    background-color: var(--bg-color1);
+    padding: 1em;
+    outline: .5em solid var(--bg-color1);
+}
+.card>h2, .card>h3 {
+    padding: .2em;
+}
+.card>h2 {
+    color: var(--text-color1);
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+.card>h3{
+    font-size: 1em;
+    text-align: right;
+    color: var(--text-color1)
+}
+
+/* TESTIMONIAL */
+
+.testimonial {
+    background-color: var(--bg-color2);
+}
+.testimonial>.container {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.testimonial>.container>.quote {
+    flex: 1 0 100%;
+}
+.testimonial>.container>.quote>blockquote{
+    font-size: 1.4em;
+    font-style: italic;
+    padding-bottom: 1em;
+}
+.testimonial>.container>.quote>p{
+    font-size: 1.1em;
+    text-align: right;
+    font-weight: bold;
+}
+.testimonial>.container>.quote>p::before{
+    content: '-- ';
+}
+
+.testimonial>.container>.quote {
+    transition: transform 1s ease-in-out;
+    transform: translateX(-200%);
 }
