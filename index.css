@@ -110,7 +110,9 @@ header>.container {
     font-size: 1.3rem;
     border-radius: 10px;
     padding: 10px 15px;
-    border: none;
+    border: .1em solid var(--text-color1);
+    cursor: pointer;
+
 }
 .hero>.container>.image-container {
     padding: 0 2em;
